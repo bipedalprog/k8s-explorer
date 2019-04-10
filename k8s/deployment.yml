@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: k8s-explorer
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: explorer
+    spec:
+      containers:
+        - name: explorer
+          image: explorer
+          ports:
+            - containerPort: 8080
